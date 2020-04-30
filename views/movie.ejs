@@ -1,0 +1,65 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%=movie.title%></title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lemonada:wght@300&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="movie">
+      <div class="title">
+        <h1><%=movie.title%></h1>
+      </div>
+      <div class="desc">
+        <div class="img">
+          <img src="/img/<%=movie.poster%>" class ="poster" alt="">
+        </div>
+        <div class="cont">
+          <table>
+            <tr>
+              <th>Title</th>
+              <td> <%=movie.title%> </td>
+            </tr>
+            <tr>
+              <th>Year</th>
+              <td> <%=movie.year%> </td>
+            </tr>
+            <tr>
+              <th>Genres</th>
+              <td>
+                <% movie.genres.forEach(function(genre){%>
+                  <%=genre%>
+                <%});%>
+              </td>
+            </tr>
+            <tr>
+              <th>Release Date</th>
+              <td> <%=movie.releaseDate%> </td>
+            </tr>
+            <tr>
+              <th>Story line</th>
+              <td> <p><%=movie.storyline%></p> </td>
+            </tr>
+            <tr>
+              <th>Actors</th>
+              <td>
+                <% movie.actors.forEach(function(actor){%>
+                  <%=actor%>
+                <%});%>
+              </td>
+            </tr>
+            <tr>
+              <th>imdb Rating</th>
+              <td> <%=movie.imdbRating%> </td>
+            </tr>
+            <tr>
+
+          </table>
+        </div>
+      </div>
+
+      <a href="/" class="btn">Back</a>
+      </div>
+   </body>
+</html>

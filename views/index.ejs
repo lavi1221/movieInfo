@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lemonada:wght@300&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <div class="movie">
+      <div class="title">
+        <h1>MOVIES.info</h1>
+      </div>
+      <div class="form">
+        <form>
+          <input type="text" name="searchbar" value="" placeholder="Type Movie Name">
+          <select class="genere" name="selection" value ="Genere">
+            <option value="All" selected> ALL</option>
+            <option value="CRIME">CRIME</option>
+            <option value="SCI-FI">SCI-FI</option>
+            <option value="ROMANCE">ROMANCE</option>
+            <option value="COMEDY">COMEDY</option>
+            <option value="ACTION">ACTION</option>
+            <option value="ADVENTURE">ADVENTURE</option>
+            <option value="DRAMA">DRAMA</option>
+            <option value="THRILLER">THRILLER</option>
+            <option value="ANIMATION">ANIMATION</option>
+            <option value="BIO">BIOGRAPHY</option>
+            <option value="History">HISTORY</option>
+            
+            <option value="Horor">HOROR</option></option>
+          </select>
+        </form>
+      </div>
+      <div class="movie-list">
+        <ul>
+          <% movies.forEach(function(movie){ %>
+      <a href="/<%=movie.id%>">
+          <li class = "list-items">
+            <span class ="movie-name"><%= movie.title %></span>
+            <span class ="movie-type">
+              <% movie.genres.forEach(function(genre){%>
+                <%=genre%>
+              <%});%>
+            </span>
+          </li>
+        <%});%>
+        </a>
+        </ul>
+      </div>
+    </div>
+    <script src="/js/index.js" charset="utf-8"></script>
+  </body>
+</html>
